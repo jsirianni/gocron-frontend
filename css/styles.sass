@@ -22,24 +22,16 @@ $delete-red: #dc3545
   margin-top: 20px
 
 
-//
+// main area
 .job-container
   background-color: $white
   min-height: 500px
   border-radius: 3px
   color: $crongray
 
-
-//
-.delete
-  &:hover
-    cursor: pointer
-
-.confirmationMessage
-  font-size: 1.2em
-
 .column-header
   font-size: 1.4em
+  font-weight: 500
 
 .column-data
   font-size: 1em
@@ -47,10 +39,15 @@ $delete-red: #dc3545
 .column-data-icon
   font-size: 1.3em
 
+.delete
+  &:hover
+    cursor: pointer
 
-// ion icon alterations
-.ion-checkmark-circled
-  color: $crongreen
 
-.ion-alert-circled
-  color: $delete-red
+// confirmation message are
+.confirmation-area
+  width: 100vw
+  height: 100px
+  padding: .75rem 1.25rem
+  display: flex
+  background-color: #f8d7daad

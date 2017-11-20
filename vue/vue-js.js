@@ -37,7 +37,7 @@ new Vue({
           keys: [this.partialKey1, this.partialKey2]
         };
         // send data received off to php file to make the deletion
-        axios.post('http://dev.gocron.local/delete-cron-row.php', {
+        axios.post('/delete-cron-row.php', {
           data: payload
         })
         .then(function (response) {
