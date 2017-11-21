@@ -39,7 +39,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
 
     <!-- icon pack cdn -->
-    <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
 
     <!-- custom styles -->
     <link rel="stylesheet" href="css/styles.min.css">
@@ -99,7 +99,7 @@
                 <div class="col-2 my-auto text-center">'; // end of first output section
 
                 // if alerted column is true, display one icon, if not, display another one
-                $row[$alerted] === ('t') ? $output.='<span class="column-data-icon text-center ion-checkmark-circled"></span>' : $output.='<span class="column-data-icon text-center ion-alert-circled"></span>';
+                $row[$alerted] === ('f') ? $output.='<span class="column-data-icon text-center ion-checkmark-circled"></span>' : $output.='<span class="column-data-icon text-center ion-alert-circled"></span>';
 
             $output.= '
                 </div>
