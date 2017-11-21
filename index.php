@@ -65,9 +65,9 @@
           <div class="col-4 column-header text-center">
             <span class="align-middle cron-green">Job Name</span>
           </div>
-          <div class="col-4"></div>
+          <div class="col-4 d-none d-sm-block "></div>
           <div class="col-2 column-header text-center">
-            <span class="align-middle cron-green">Account</span>
+            <span class="align-middle cron-green">Action</span>
           </div>
           <div class="col-2 column-header text-center">
             <span class="align-middle cron-green">Status</span>
@@ -77,18 +77,18 @@
 
 
         <?php
-          $result = pg_query($link, "SELECT * FROM gocron");
+          $result = pg_query($link, "SELECT * FROM gocron ORDER BY $account");
           echo "<div id='cronjobs'>";
           while ($row = pg_fetch_assoc($result)) {
-            $pk1 = "'" . $row['cronname'] . "'";
-            $pk2 = "'" . $row['account'] . "'";
+            $pk1 = "'" . $row[$cronname] . "'";
+            $pk2 = "'" . $row[$account] . "'";
             $output = '
               <div class="row">
                 <div class="col-4 column-data text-center my-auto">
-                  '. $row['cronname'] . '
+                  '. $row[$cronname] . '
                 </div>
 
-                <div class="col-4">
+                <div class="col-4 d-none d-sm-block ">
 
                 </div>
 
@@ -99,7 +99,7 @@
                 <div class="col-2 my-auto text-center">'; // end of first output section
 
                 // if alerted column is true, display one icon, if not, display another one
-                $row['alerted'] === ('t') ? $output.='<span class="column-data-icon text-center ion-checkmark-circled"></span>' : $output.='<span class="column-data-icon text-center ion-alert-circled"></span>';
+                $row[$alerted] === ('t') ? $output.='<span class="column-data-icon text-center ion-checkmark-circled"></span>' : $output.='<span class="column-data-icon text-center ion-alert-circled"></span>';
 
             $output.= '
                 </div>
