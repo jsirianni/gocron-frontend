@@ -1,24 +1,29 @@
 <?php
 
+// Function returns a database config
+// Config should be placed in /etc/gocron and be owned
+// by root with 644 permissions or be owned by the web
+// server / php user with 600 permissions
+function getConfig() {
+      try {
+            return parse_ini_file("/etc/gocron/dbconfig.ini");
+      }
+      catch (Exception $e) {
+            return "Could not read config file " . $e;
+      }
+}
+
 // Function returns a database connection
 function dbConnect() {
 
-      $host = 'localhost';
-      $dbname = 'gocron';
-      $port = '5432';
-      $dbuser = 'gocron';
-      $dbpass = 'password';
-
+      // Get db config  and buid a connection string
+      $dbConfig = getConfig();
+      $host   = $dbConfig['host'];
+      $dbuser = $dbConfig['user'];
+      $dbpass = $dbConfig['pass'];
+      $dbname = $dbConfig['dbname'];
+      $port   = $dbConfig['port'];
       $conn_string = "host=$host port=$port dbname=$dbname user=$dbuser password=$dbpass";
-      // DB Config
-      // $dbConfig = getConfig();
-
-      // Connection vars
-      // $host = $dbConfig['host'];
-      // $user = $dbConfig['user'];
-      // $pass = $dbConfig['pass'];
-      // $dbname = $dbConfig['dbname'];
-      // $port = $dbConfig['port'];
 
       // Create connection
       try {
