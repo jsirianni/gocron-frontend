@@ -99,7 +99,7 @@
                 <div class="col-2 my-auto text-center">'; // end of first output section
 
                 // if alerted column is true, display one icon, if not, display another one
-                $row[$alerted] === ('t') ? $output.='<span class="column-data-icon text-center ion-checkmark-circled"></span>' : $output.='<span class="column-data-icon text-center ion-alert-circled"></span>';
+                $row[$alerted] === ('f') ? $output.='<span class="column-data-icon text-center ion-checkmark-circled"></span>' : $output.='<span class="column-data-icon text-center ion-alert-circled"></span>';
 
             $output.= '
                 </div>
