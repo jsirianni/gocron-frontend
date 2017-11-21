@@ -1,0 +1,11 @@
+; This file should be set to read only and owned by the user
+; that will be running the program
+;
+; chown <user>:<group> dbconfig.yml
+; chmod 600 dbconfig.yml
+
+host = "localhost"
+port = "5432"
+dbname = "gocron"
+user = ""
+pass = ""

@@ -63,14 +63,14 @@
       <div class="container padding-top-20 margin-top-20 job-container">
         <div class="row">
           <div class="col-4 column-header text-center">
-            <span class="align-middle">Job Name</span>
+            <span class="align-middle cron-green">Job Name</span>
           </div>
           <div class="col-4"></div>
           <div class="col-2 column-header text-center">
-            <span class="align-middle">Account</span>
+            <span class="align-middle cron-green">Account</span>
           </div>
           <div class="col-2 column-header text-center">
-            <span class="align-middle">Status</span>
+            <span class="align-middle cron-green">Status</span>
           </div>
         </div>
         <hr>
@@ -107,19 +107,25 @@
             <hr>'; // end of last output section
 
             echo $output;
-          }
+            }
             echo '
-              <div class="row alert alert-danger confirmationMessage my-auto" v-if="showDeleteMsgBox">
-                  <div class="col-6">
-                    Are you sure you want to delete: "{{ jobname }}"?
-                  </div>
+            <transition name="fade">
+              <div class="confirmation-area" v-if="showDeleteMsgBox">
+                <div class="container my-auto">
+                  <div class="row">
+                    <div class="col-6 text-center my-auto">
+                      Are you sure you want to delete: "<strong>{{ jobname }}</strong>"?
+                    </div>
 
-                  <div class="col-6 text-center my-auto">
-                    <button class="btn btn-danger" @click="confirmDelete">Confirm</button>
-                    <button class="btn btn-primary" @click="dismissDelete">Dismiss</button>
+                    <div class="col-6 text-center my-auto">
+                      <button class="btn btn-danger" @click="confirmDelete">Confirm</button>
+                      <button class="btn btn-primary" @click="dismissDelete">Dismiss</button>
+                    </div>
                   </div>
+                </div>
               </div>
-            </div>';
+              </transition>
+            </div>'; // end vue #cronjobs scope
         ?>
 
 
