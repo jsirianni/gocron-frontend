@@ -77,7 +77,7 @@
 
 
         <?php
-          $result = pg_query($link, "SELECT * FROM gocron");
+          $result = pg_query($link, "SELECT * FROM gocron ORDER BY $account");
           echo "<div id='cronjobs'>";
           while ($row = pg_fetch_assoc($result)) {
             $pk1 = "'" . $row[$cronname] . "'";
