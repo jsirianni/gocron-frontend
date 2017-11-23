@@ -65,6 +65,9 @@
           <div class="col-4 column-header text-center">
             <span class="align-middle cron-green">Job Name</span>
           </div>
+          <div class="col-4 column-header text-center">
+           <span class="align-middle cron-green">Account</span>
+          </div>
           <div class="col-4 d-none d-sm-block "></div>
           <div class="col-2 column-header text-center">
             <span class="align-middle cron-green">Action</span>
