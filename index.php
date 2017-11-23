@@ -63,7 +63,7 @@
       <div class="container padding-top-20 margin-top-20 job-container">
         <div class="row">
           <div class="col-4 column-header text-center">
-            <span class="align-middle cron-green">Job Name</span>
+            <span class="align-middle cron-green">Job Name | Account</span>
           </div>
           <div class="col-4 d-none d-sm-block "></div>
           <div class="col-2 column-header text-center">
