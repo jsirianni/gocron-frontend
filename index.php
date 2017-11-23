@@ -85,7 +85,7 @@
             $output = '
               <div class="row">
                 <div class="col-4 column-data text-center my-auto">
-                  '. $row[$cronname]  .  $row[$account] . '
+                  '. $row[$cronname]  . '   |   ' .  $row[$account] . '
                 </div>
 
                 <div class="col-4 d-none d-sm-block ">
